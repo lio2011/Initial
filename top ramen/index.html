@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="content">
+	    <div class="navbar">
+		   <div class="left">
+			    <div class="home">	
+				    <a href="index.html">home</a>
+			    </div>
+			    <div class="home">	
+			        <a href="index.html">about</a>
+			    </div>
+		   </div>
+	        <div class="right">
+		        <input type="text" placeholder="Search..">
+		    </div>
+		</div>
+		
+		</div>
+	</div>
+<p id="hi"></p>
+<p class="hi">fasd</p>
+<p class="hi"></p>
+<p class="hi"></p>
+<script type="text/javascript">
+
+var xml = new XMLHttpRequest();
+xml.onreadystatechange = function(){
+    if(xml.status == 200 && xml.readyState==4){
+        var food = JSON.parse(xml.responseText);
+		document.getElementById("hi").innerHTML = food[0].Brand;
+
+
+
+     }
+};
+xml.open("GET","https://api.jsonbin.io/b/5ea441ca98b3d53752344cc5",true);
+xml.send();
+</script>
+</body>
+</html>
