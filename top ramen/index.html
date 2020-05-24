@@ -33,7 +33,7 @@ var xml = new XMLHttpRequest();
 xml.onreadystatechange = function(){
     if(xml.status == 200 && xml.readyState==4){
         var food = JSON.parse(xml.responseText);
-		document.getElementById("hi").innerHTML = food[0].Brand;
+		document.getElementsByClassName("hi").innerHTML = food[0].Brand;
 
 
 
